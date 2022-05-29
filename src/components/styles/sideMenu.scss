@@ -1,0 +1,16 @@
+.menu{
+    display: flex;
+    margin: 10px;
+
+    &__icon{
+        margin:10px;
+    }
+
+    &__item{
+        display: flex;
+        align-items: center;
+        > .svg {
+            height: 25px;
+        }
+    }
+}
