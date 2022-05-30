@@ -4,13 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faPaperPlane, faCompass, faHeart, faSquarePlus  } from '@fortawesome/free-regular-svg-icons';
 import profileImg from '../assets/profile.jpg'
+import ProfileMenu from './ProfileMenu'
 
 import "./styles/sideMenu.css";
 
 function MenuIcon({image}) {
     return (
         <div className="menu__item">
-            <img src={image} className="menu__profile"/> 
+            <ProfileMenu src={image}></ProfileMenu>
         </div>
     )
 }
@@ -19,7 +20,7 @@ export default function SideMenu(){
     return(
         <div className="menu">
             <div className="menu__item">
-            <IconButton edge="start" color="inherit">
+            <IconButton edge="start" color="inherit" onClick={() => { alert('clicked') }}>
                 <FontAwesomeIcon className="menu__icon" icon={faHouse } />
             </IconButton>
             <IconButton edge="start" color="inherit">
