@@ -5,9 +5,9 @@
     padding: 0 250px
 }
 .content_left{
-    flex: 0.5;
+    width: 50%;
 }
 .content_right{
-    flex: 0.5;
+    width: 50%;
     text-align: right;
 }

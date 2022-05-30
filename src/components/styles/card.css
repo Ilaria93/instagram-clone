@@ -2,12 +2,12 @@
     height: 350px;
     margin-top: 20px;
     width: 100%;
-    border:1px solid #cdcdcd;
+    border:1px solid #dbdbdb;
     border-radius: 8px;
 }
 .card__header{
     height: 58px;
-    border-bottom:1px solid #cdcdcd;
+    border-bottom:1px solid #dbdbdb;
     display: flex;
     justify-content: space-between;
     align-items: center;

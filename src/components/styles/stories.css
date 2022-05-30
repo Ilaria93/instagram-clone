@@ -1,0 +1,26 @@
+
+.stories__content{
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    display: flex;
+    padding:16px;
+    overflow: scroll;
+}
+.first_stories{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    width: 55px;
+}
+.first_stories >p{
+    font-size: 12px;
+    margin:0;
+    margin-top:5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    white-space: nowrap;
+    width: 55px;
+}
