@@ -1,9 +1,13 @@
 import React from 'react';
+import Card from './Card';
 
 export default function LeftSidebar(){
     return(
         <div>
-            left
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card> 
         </div>
     )
 }
