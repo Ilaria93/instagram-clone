@@ -1,27 +1,40 @@
 import React from 'react';
+import {IconButton } from "@material-ui/core"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro' 
-import "./styles/sideMenu.scss";
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane, faCompass, faHeart, faSquarePlus  } from '@fortawesome/free-regular-svg-icons';
+import profileImg from '../assets/profile.jpg'
 
-function MenuIcon({icon, label}) {
+import "./styles/sideMenu.css";
+
+function MenuIcon({image}) {
     return (
         <div className="menu__item">
-            
+            <img src={image} className="menu__profile"/> 
         </div>
-
     )
 }
 
 export default function SideMenu(){
     return(
         <div className="menu">
-             <div className="menu__item">
-                <FontAwesomeIcon className="menu__icon" icon={solid('house')}/>
-                <FontAwesomeIcon className="menu__icon" icon={regular('envelope')}/>
-                <FontAwesomeIcon className="menu__icon" icon={regular('square-plus')}/>
-                <FontAwesomeIcon className="menu__icon" icon={regular('compass')}/>
-                <FontAwesomeIcon className="menu__icon" icon={regular('heart')}/>
-                <MenuIcon icon="x" label="profile"/>   
+            <div className="menu__item">
+            <IconButton edge="start" color="inherit">
+                <FontAwesomeIcon className="menu__icon" icon={faHouse } />
+            </IconButton>
+            <IconButton edge="start" color="inherit">
+                <FontAwesomeIcon className="menu__icon" icon={faPaperPlane} />
+            </IconButton>
+            <IconButton edge="start" color="inherit">
+                <FontAwesomeIcon className="menu__icon" icon={faSquarePlus} />
+            </IconButton>
+            <IconButton edge="start" color="inherit">
+              <FontAwesomeIcon className="menu__icon" icon={faCompass} /> 
+            </IconButton>
+            <IconButton edge="start" color="inherit">
+                <FontAwesomeIcon className="menu__icon" icon={faHeart} />
+            </IconButton>
+            <MenuIcon image={profileImg} label="profile"/>   
             </div> 
         </div>
     )

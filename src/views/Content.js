@@ -2,7 +2,7 @@ import React from 'react';
 import LeftSidebar from '../components/LeftSidebar';
 
 import RightSidebar from '../components/RightSidebar';
-import "../components/styles/content.scss"
+import "../components/styles/content.css"
 
 export default function Content(){
     return(

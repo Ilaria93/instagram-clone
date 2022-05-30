@@ -1,8 +1,8 @@
 import React from 'react';
 import {IconButton, Button } from "@material-ui/core"
 import Search from './Search';
-import "./styles/header.scss"
-import InstaLogo from "./logo.png";
+import "./styles/header.css"
+import InstaLogo from "../assets/logo.png";
 import SideMenu from './SideMenu';
 
 
@@ -21,7 +21,6 @@ export default function Header() {
            <IconButton edge="start" className="header__menuicon" color="inerit" aria-label="icon">
            </IconButton>
            <SideMenu/>
-           <Button color="inherit">Login</Button>
            
        </div>
    </div>
