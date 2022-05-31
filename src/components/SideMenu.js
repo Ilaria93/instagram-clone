@@ -3,7 +3,7 @@ import {IconButton } from "@material-ui/core"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faPaperPlane, faCompass, faHeart, faSquarePlus  } from '@fortawesome/free-regular-svg-icons';
-import profileImg from '../assets/profile.jpg'
+import profileImg from '../assets/Profile/profile.jpg'
 import ProfileMenu from './ProfileMenu'
 
 import "./styles/sideMenu.css";

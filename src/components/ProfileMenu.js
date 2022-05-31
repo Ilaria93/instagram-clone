@@ -9,7 +9,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import profileImg from '../assets/profile.jpg'
+import profileImg from '../assets/Profile/profile.jpg'
 import './styles/profileMenu.css'
 
 
