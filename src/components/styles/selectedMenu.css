@@ -1,0 +1,23 @@
+.menu__title{
+    font-weight: bold;
+    font-size: 12px;
+    margin: 0;
+    padding: 2px 10px;
+}
+.menuItem{
+    font-size: 14px;
+    overflow: auto;
+    padding: 0;
+    width: 100%;
+}
+.avatar{
+    margin-right: 10px;
+}
+.menuItem__name{
+    font-weight: bold;
+    margin-right: 5px;
+}
+.menuItem__time{
+    color: #8e8e8e;
+    margin-left: 5px;
+}

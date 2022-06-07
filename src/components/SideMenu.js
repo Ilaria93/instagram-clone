@@ -4,7 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faPaperPlane, faCompass, faHeart, faSquarePlus  } from '@fortawesome/free-regular-svg-icons';
 import profileImg from '../assets/Profile/profile.jpg'
-import ProfileMenu from './ProfileMenu'
+import ProfileMenu from './ProfileMenu';
+import SelectedMenu from './SelectedMenu';
+import Modal  from './Modal';
+
 
 import "./styles/sideMenu.css";
 
@@ -16,24 +19,25 @@ function MenuIcon({image}) {
     )
 }
 
-export default function SideMenu(){
+export default function SideMenu () {
+    
     return(
         <div className="menu">
             <div className="menu__item">
-            <IconButton edge="start" color="inherit" onClick={() => { alert('clicked') }}>
+            <IconButton edge="start" color="inherit" >
                 <FontAwesomeIcon className="menu__icon" icon={faHouse } />
             </IconButton>
-            <IconButton edge="start" color="inherit">
+            <IconButton edge="start" color="inherit" onClick={() => { alert('clicked') }}>
                 <FontAwesomeIcon className="menu__icon" icon={faPaperPlane} />
             </IconButton>
             <IconButton edge="start" color="inherit">
-                <FontAwesomeIcon className="menu__icon" icon={faSquarePlus} />
+                <Modal icon={faSquarePlus} />
             </IconButton>
             <IconButton edge="start" color="inherit">
               <FontAwesomeIcon className="menu__icon" icon={faCompass} /> 
             </IconButton>
             <IconButton edge="start" color="inherit">
-                <FontAwesomeIcon className="menu__icon" icon={faHeart} />
+                <SelectedMenu icon={faHeart} />
             </IconButton>
             <MenuIcon image={profileImg} label="profile"/>   
             </div> 

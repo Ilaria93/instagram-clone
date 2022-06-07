@@ -1,0 +1,23 @@
+
+.makeStyles-paper-3{
+    left: 50% !important;
+    padding:0 !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+.modal__top{
+    border-bottom: 1px solid #dbdbdb;
+    padding: 16px;
+    text-align: center;
+}
+.modal__top h4{
+    margin:0;
+}
+.modal__center{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 51px);
+    justify-content: center;
+    width: 100%;
+}
