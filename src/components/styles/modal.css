@@ -21,3 +21,9 @@
     justify-content: center;
     width: 100%;
 }
+.modal__center img, .modal__center p{
+    margin-bottom: 20px;
+}
+.modal__center p{
+    font-size: 20px;
+}

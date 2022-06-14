@@ -8,8 +8,8 @@ import './styles/card.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      display: 'flex',
-      '& > *': {
+        display: 'flex',
+        '& > *': {
         margin: theme.spacing(1),
       },
     },
@@ -26,6 +26,7 @@ export default function Card(props){
     const number = props.number ;
     const comment_number = props.comment_number ;
     const pubblicetion = props.pubblicetion;
+    const background = props.background;
 
     return(
         <div className="card">
@@ -41,7 +42,7 @@ export default function Card(props){
             </div>
                 <FontAwesomeIcon className="menu__icon" icon={faEllipsis} />
           </div>
-          <div className= "card__pictures"></div>
+          <div className= "card__pictures" style={{ backgroundImage: `url(${background})` }}></div>
           <div className= "card__icons">
             <div className= "card__icons-left">
                 <FontAwesomeIcon className="card__icon" icon={faHeart} />
@@ -61,10 +62,10 @@ export default function Card(props){
           <div className= "card__comment">
             <FontAwesomeIcon className="card__icon" icon={faFaceSmile} />
             <form className={classes.root} noValidate autoComplete="off">
-                <TextField id="standard-basic" label="Aggiungi commento..." variant="standard" />
+                <TextField id="outlined-basic" label="Aggiungi commento..." variant="outlined" />
             </form>
-            <div className={classes.root}>
-                <Button>Pubblica</Button>
+            <div className={classes.root.btn}>
+                <Button className= "btn__public">Pubblica</Button>
             </div>
           </div>
           

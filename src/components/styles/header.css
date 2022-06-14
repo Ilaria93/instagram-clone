@@ -12,6 +12,8 @@
     display: flex;
     align-items: center;
 }
-.header__logo{
-    height: 35px;
+.header__menuicon{
+    font-family: 'Licorice', cursive;
+    font-size: 35px !important;
+    font-weight: bold;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from './Card';
-import Stories from './Stories';
+import Card from '../components/Card';
+import Stories from '../components/Stories';
 
 //images
 import goku from '../assets/Profile/goku.jpeg'
@@ -19,21 +19,24 @@ const arrayOfObjects = [
         name:'Bra',
         number: 150,
         comment_number: 9,
-        pubblicetion: 2  + ' ' + 'ore fa'
+        pubblicetion: 2  + ' ' + 'ore fa',
+        images:[Goan, Goten, Pan, Cyborg ]
     },
     { 
         image: goku,
         name: 'Goku', 
         number: 580,
         comment_number: 13,
-        pubblicetion: 5 + ' ' +  'ore fa'
+        pubblicetion: 5 + ' ' +  'ore fa',
+        images:[]
     },    
     { 
         image: bulma,
         name: 'Bulma',
         number: 789,
         comment_number: 65,
-        pubblicetion: 1  + ' ' + 'Giorno fa'
+        pubblicetion: 1  + ' ' + 'Giorno fa',
+        images:[]
         
     },
     { 
@@ -41,7 +44,8 @@ const arrayOfObjects = [
         name: 'Trunks',
         number: 200,
         comment_number:7, 
-        pubblicetion: 3  + ' ' + 'ore fa'
+        pubblicetion: 3  + ' ' + 'ore fa',
+        images:[]
         
     },
 
@@ -54,7 +58,7 @@ export default function LeftSidebar(){
         <div>
             <Stories></Stories>
                 {arrayOfObjects.map((element, index) => (
-                    <Card image={element.image} name={element.name} number={element.number} comment_number={element.comment_number} pubblicetion={element.pubblicetion} className="menuItem"></Card>
+                    <Card image={element.image} name={element.name} number={element.number} comment_number={element.comment_number} pubblicetion={element.pubblicetion} background={element.images[0]}className="menuItem"></Card>
                 ))}
         </div>
     )
