@@ -35,7 +35,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleModal(props) {
     const icon = props.icon ;
+    const title = props.title
+    const text = props.text
     const classes = useStyles();
+   
     // getModalStyle is not a pure function, we roll the style only on the first render
     const [modalStyle] = React.useState(getModalStyle);
     const [open, setOpen] = React.useState(false);
@@ -51,11 +54,12 @@ export default function SimpleModal(props) {
     const body = (
         <div style={modalStyle} className={classes.paper}>
             <div className="modal__top">
-                <h4 id="simple-modal-title">Crea un nuovo post </h4>
+                <h4 id="simple-modal-title">{title} </h4>
             </div>
+            <hr className="modal__hr"/>
             <div className="modal__center">
                 <img src={images}/>
-                <p>Trascina le foto e i video qui</p>
+                <p>{text}</p>
                 <UploadImageButton />
             </div>
             <SimpleModal />

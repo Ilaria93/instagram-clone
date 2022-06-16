@@ -31,7 +31,7 @@ export default function SideMenu () {
                 <FontAwesomeIcon className="menu__icon" icon={faPaperPlane} />
             </IconButton>
             <IconButton edge="start" color="inherit">
-                <Modal icon={faSquarePlus} />
+                <Modal title={'Crea un nuovo post'} text={'Trascina le foto e i video qui'} icon={faSquarePlus} />
             </IconButton>
             <IconButton edge="start" color="inherit">
               <FontAwesomeIcon className="menu__icon" icon={faCompass} /> 

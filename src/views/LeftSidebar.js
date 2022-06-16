@@ -58,7 +58,7 @@ export default function LeftSidebar(){
         <div>
             <Stories></Stories>
                 {arrayOfObjects.map((element, index) => (
-                    <Card image={element.image} name={element.name} number={element.number} comment_number={element.comment_number} pubblicetion={element.pubblicetion} background={element.images[0]}className="menuItem"></Card>
+                    <Card  image={element.image} name={element.name} number={element.number} comment_number={element.comment_number} pubblicetion={element.pubblicetion} background={element.images[0]}className="menuItem"></Card>
                 ))}
         </div>
     )
