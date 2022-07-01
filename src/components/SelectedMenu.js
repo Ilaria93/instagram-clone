@@ -64,7 +64,7 @@ export default function SimpleMenu(props) {
             >
                 <p className="menu__title">Questa settimana</p>
                 {options.map((option, index) => (
-                    <MenuItem onClick={handleClose } className="menuItem">
+                    <MenuItem key={index} onClick={handleClose } className="menuItem">
                         <Avatar alt="goku" src={option.image}  className="avatar"></Avatar>
                         <p className="menuItem__name">{option.name}</p>
                         <p className="menuItem__text">{option.text}</p>
