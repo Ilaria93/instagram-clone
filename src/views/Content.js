@@ -3,6 +3,7 @@ import React from 'react';
 //components
 import LeftSidebar from './LeftSidebar';
 import RightSidebar from './RightSidebar';
+import Messages from './Messages'
 
 export default function Content(){
     const content = {
@@ -24,13 +25,14 @@ export default function Content(){
     return(
         <div>
             <div style={content}>
-                <div style={content_left}>
+                <Messages></Messages>
+                {/* <div style={content_left}>
                     <LeftSidebar />
                 </div>
                 
                 <div  style={content_right}>
                     <RightSidebar />
-                </div>
+                </div> */}
             </div>
         </div>
     )
