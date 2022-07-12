@@ -1,8 +1,24 @@
-.MuiButton-containedPrimary{
-    color: transparent !important;
-    background-color: transparent !important;
-    border-radius: 50% !important;
-    height: 35px;
-    min-width: 35px !important;
-    background-size: contain;
+.MuiButton-containedPrimary {
+  color: transparent !important;
+  background-color: transparent !important;
+  border-radius: 50% !important;
+  height: 35px;
+  min-width: 35px !important;
+  background-size: contain;
+}
+.Component-paper-4 {
+  top: 53px !important;
+  left: 928px !important;
+  width: 230px;
+  box-shadow: 0 0 5px 1px hsl(0deg 0% 0% / 18%) !important;
+  border: none !important;
+}
+.MuiButtonBase-root {
+  height: 40px;
+}
+.MuiListItemIcon-root {
+  min-width: 30px !important;
+}
+.MuiTypography-body1 {
+  font-size: 14px !important;
 }

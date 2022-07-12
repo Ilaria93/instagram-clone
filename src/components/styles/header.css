@@ -1,19 +1,22 @@
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px;
-    padding: 0 150px
+.header {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  justify-content: space-between;
+  padding: 0 150px;
 }
-.header__left, .header__right, .header__center{
-    flex: 33%;
+.header__left,
+.header__right,
+.header__center {
+  flex: 33%;
 }
-.header__right{
-    display: flex;
-    align-items: center;
+.header__right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
-.header__menuicon{
-    font-family: 'Licorice', cursive;
-    font-size: 35px !important;
-    font-weight: bold;
+.header__menuicon {
+  font-family: 'Licorice', cursive;
+  font-size: 30px !important;
+  font-weight: bold;
 }

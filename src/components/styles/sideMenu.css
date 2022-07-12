@@ -1,20 +1,20 @@
-.menu{
-    display: flex;
-    margin: 10px;
+.menu {
+  display: flex;
 }
 
-.menu__icon{
-    margin:3px;
+.menu__item {
+  display: flex;
+  align-items: center;
 }
-
-.menu__item{
-    display: flex;
-    align-items: center;
+.menu__icon {
+  width: 24px;
+  height: 24px;
+  margin: 10px;
 }
-.menu__item .svg {
-    height: 25px;
+.MuiIconButton-root {
+  padding: 0 7px;
 }
-
-
-    
-
+.active {
+  border-radius: 13px;
+  box-shadow: 0 0 5px 1px hsl(0deg 0% 0% / 11%);
+}

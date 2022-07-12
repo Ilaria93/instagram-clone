@@ -1,17 +1,23 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleUser, faBookmark } from '@fortawesome/free-regular-svg-icons';
-import { faGear, faRotate } from '@fortawesome/free-solid-svg-icons';
+import React from 'react'
+// material-ui
+import { withStyles } from '@material-ui/core/styles'
+import {
+  Button,
+  Menu,
+  MenuItem,
+  ListItemIcon,
+  ListItemText,
+} from '@material-ui/core'
 
-import { Button } from "@material-ui/core"
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+// importing Link from react-router-dom to navigate to different end points.
+import { Link } from 'react-router-dom'
+//FONTAWESOME
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleUser, faBookmark } from '@fortawesome/free-regular-svg-icons'
+import { faGear, faRotate } from '@fortawesome/free-solid-svg-icons'
+
 import profileImg from '../assets/Profile/profile.jpg'
 import './styles/profileMenu.css'
-
 
 const StyledMenu = withStyles({
   paper: {
@@ -31,29 +37,27 @@ const StyledMenu = withStyles({
     }}
     {...props}
   />
-));
+))
 
 const StyledMenuItem = withStyles((theme) => ({
   root: {
     '&:focus': {
-    //   backgroundColor: theme.palette.primary.main,
-      '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-        
-      },
+      //   backgroundColor: theme.palette.primary.main,
+      '& .MuiListItemIcon-root, & .MuiListItemText-primary': {},
     },
   },
-}))(MenuItem);
+}))(MenuItem)
 
-export default function CustomizedMenus({image}) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+export default function CustomizedMenus({ image }) {
+  const [anchorEl, setAnchorEl] = React.useState(null)
 
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
 
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
   return (
     <div>
@@ -63,9 +67,8 @@ export default function CustomizedMenus({image}) {
         variant="contained"
         color="primary"
         onClick={handleClick}
-       style={{ backgroundImage: `url(${profileImg})` }}
-      > 
-      </Button>
+        style={{ backgroundImage: `url(${profileImg})` }}
+      ></Button>
       <StyledMenu
         id="customized-menu"
         anchorEl={anchorEl}
@@ -75,29 +78,35 @@ export default function CustomizedMenus({image}) {
       >
         <StyledMenuItem>
           <ListItemIcon>
-            <FontAwesomeIcon  icon={faCircleUser} className="" fontSize="small" />
+            <FontAwesomeIcon
+              icon={faCircleUser}
+              className=""
+              fontSize="small"
+            />
           </ListItemIcon>
-          <ListItemText primary="Profilo" />
+          <Link to="/profile">
+            <ListItemText primary="Profilo" />
+          </Link>
         </StyledMenuItem>
         <StyledMenuItem>
           <ListItemIcon>
-            <FontAwesomeIcon  icon={faBookmark} className="" fontSize="small" />
+            <FontAwesomeIcon icon={faBookmark} className="" fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Elementi salvati" />
         </StyledMenuItem>
         <StyledMenuItem>
           <ListItemIcon>
-            <FontAwesomeIcon  icon={faGear} className="" fontSize="small" /> 
+            <FontAwesomeIcon icon={faGear} className="" fontSize="small" />
           </ListItemIcon>
-            <ListItemText primary="Impostazioni" />
+          <ListItemText primary="Impostazioni" />
         </StyledMenuItem>
         <StyledMenuItem>
           <ListItemIcon>
-          <FontAwesomeIcon  icon={faRotate} className="" fontSize="small" />
+            <FontAwesomeIcon icon={faRotate} className="" fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Cambia account" />
         </StyledMenuItem>
       </StyledMenu>
     </div>
-  );
+  )
 }
