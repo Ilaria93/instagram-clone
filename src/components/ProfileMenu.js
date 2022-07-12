@@ -11,6 +11,7 @@ import {
 
 // importing Link from react-router-dom to navigate to different end points.
 import { Link } from 'react-router-dom'
+
 //FONTAWESOME
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUser, faBookmark } from '@fortawesome/free-regular-svg-icons'

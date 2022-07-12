@@ -3,6 +3,7 @@
   justify-content: space-between;
   padding: 25px 150px;
   flex-wrap: wrap;
+  background: #fafafa;
 }
 .imagesPage__box {
   height: 300px;
@@ -17,13 +18,24 @@
   justify-content: center;
   cursor: pointer;
 }
-.imagesPage__hover:hover {
+.imagesPage__hover {
   position: absolute;
   top: 0;
   right: 0;
   height: 100%;
   width: 100%;
   background-color: #1e1e1e45;
+  visibility: hidden;
+}
+.imagesPage__box:hover .imagesPage__hover {
+  visibility: visible;
+}
+.imagesPage__box:hover .imagesPage__number p,
+.imagesPage__box:hover .imagesPage__icon {
+  color: #fff;
+  margin-left: 10px;
+  z-index: 99999;
+  visibility: visible;
 }
 .imagesPage__number {
   color: #fff;
@@ -33,12 +45,9 @@
 }
 .imagesPage__number p {
   font-weight: bold;
-  color: #fff;
-  margin-left: 10px;
-  z-index: 99999;
+  visibility: hidden;
 }
 .imagesPage__icon {
   height: 17px;
-  color: #fff;
-  z-index: 99999;
+  visibility: hidden;
 }

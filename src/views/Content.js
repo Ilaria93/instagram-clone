@@ -10,6 +10,7 @@ export default function Content() {
     justifyContent: 'space-between',
     alignItems: 'start',
     padding: '25px  200px',
+    background: '#fafafa',
   }
   const content_left = {
     width: '55%',

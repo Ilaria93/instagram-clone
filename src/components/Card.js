@@ -1,74 +1,106 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import {Avatar, Button, TextField} from '@material-ui/core';
+import React from 'react'
+//MATIRIAL-UI
+import { makeStyles } from '@material-ui/core/styles'
+import { Avatar, Button, TextField } from '@material-ui/core'
+//FONTAWESOME
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsis} from '@fortawesome/free-solid-svg-icons';
-import { faHeart, faComment , faPaperPlane, faBookmark , faFaceSmile} from '@fortawesome/free-regular-svg-icons';
+import { faEllipsis } from '@fortawesome/free-solid-svg-icons'
+import {
+  faHeart,
+  faComment,
+  faPaperPlane,
+  faBookmark,
+  faFaceSmile,
+} from '@fortawesome/free-regular-svg-icons'
+
+//COMPONENTS
+import Carousel from './carousel/Carousel'
+
+//STYLES
 import './styles/card.css'
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        '& > *': {
-        margin: theme.spacing(1),
-      },
+  root: {
+    display: 'flex',
+    '& > *': {
+      margin: theme.spacing(1),
     },
-    small: {
-      width: theme.spacing(3),
-      height: theme.spacing(3),
-    },
-  }));
+  },
+  small: {
+    width: theme.spacing(3),
+    height: theme.spacing(3),
+  },
+}))
 
-export default function Card(props){
-    const classes = useStyles();
-    const image = props.image ;
-    const name = props.name ;
-    const number = props.number ;
-    const comment_number = props.comment_number ;
-    const pubblicetion = props.pubblicetion;
-    const background = props.background;
+export default function Card(props) {
+  const classes = useStyles()
+  const {
+    image,
+    name,
+    number,
+    comment_number,
+    pubblicetion,
+    background,
+  } = props
 
-    return(
-        <div className="card">
-          <div className="card__header"> 
-            <div className="card__headerLeft">
-                <div className={classes.root}>
-                    <Avatar alt="" src={image} className={classes.small}/>
-                </div>
-                <div className="card__leftText">
-                    <p>{name}</p>
-                    <p> <small> Città </small></p>
-                </div>
-            </div>
-                <FontAwesomeIcon className="menu__icon" icon={faEllipsis} />
+  return (
+    <div className="card">
+      <div className="card__header">
+        <div className="card__headerLeft">
+          <div className={classes.root}>
+            <Avatar alt="" src={image} className={classes.small} />
           </div>
-          <div className= "card__pictures" style={{ backgroundImage: `url(${background})` }}></div>
-          <div className= "card__icons">
-            <div className= "card__icons-left">
-                <FontAwesomeIcon className="card__icon" icon={faHeart} />
-                <FontAwesomeIcon className="card__icon" icon={faComment} />
-                <FontAwesomeIcon className="card__icon" icon={faPaperPlane} />
-            </div>
-            <div className= "card__icons-right">
-                <FontAwesomeIcon className="card__icon" icon={faBookmark} />
-            </div>
+          <div className="card__leftText">
+            <p>{name}</p>
+            <p>
+              <small> Città </small>
+            </p>
           </div>
-          <div className= "card__text">
-              <p>Piace a {number}</p>
-              <p> {name}</p>
-              <p>Mostra tutti i { comment_number} commenti</p>
-              <p>{pubblicetion}</p>
-          </div>
-          <div className= "card__comment">
-            <FontAwesomeIcon className="card__icon" icon={faFaceSmile} />
-            <form className={classes.root} noValidate autoComplete="off">
-                <TextField id="outlined-basic" label="Aggiungi commento..." variant="outlined" />
-            </form>
-            <div className={classes.root.btn}>
-                <Button className= "btn__public">Pubblica</Button>
-            </div>
-          </div>
-          
         </div>
-    )
+        <FontAwesomeIcon className="menu__icon" icon={faEllipsis} />
+      </div>
+      {background.length > 1 ? (
+        <Carousel Images={background} />
+      ) : (
+        <div
+          className="card__pictures"
+          style={{
+            backgroundImage: `url(${background[0]})`,
+            backgroundPosition: 'top',
+            backgroundSize: 'cover',
+          }}
+        ></div>
+      )}
+
+      <div className="card__icons">
+        <div className="card__icons-left">
+          <FontAwesomeIcon className="card__icon" icon={faHeart} />
+          <FontAwesomeIcon className="card__icon" icon={faComment} />
+          <FontAwesomeIcon className="card__icon" icon={faPaperPlane} />
+        </div>
+        <div className="card__icons-right">
+          <FontAwesomeIcon className="card__icon" icon={faBookmark} />
+        </div>
+      </div>
+      <div className="card__text">
+        <p>Piace a {number}</p>
+        <p> {name}</p>
+        <p>Mostra tutti i {comment_number} commenti</p>
+        <p>{pubblicetion}</p>
+      </div>
+      <div className="card__comment">
+        <FontAwesomeIcon className="card__icon" icon={faFaceSmile} />
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            id="outlined-basic"
+            label="Aggiungi commento..."
+            variant="outlined"
+          />
+        </form>
+        <div className={classes.root.btn}>
+          <Button className="btn__public">Pubblica</Button>
+        </div>
+      </div>
+    </div>
+  )
 }

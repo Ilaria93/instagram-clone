@@ -5,12 +5,14 @@ import Stories from '../components/Stories'
 //images
 import goku from '../assets/Profile/goku.jpeg'
 import trunks from '../assets/Profile/trunks-future.jpeg'
-import Goan from '../assets/Profile/goan.png'
+import pencilTrunks from '../assets/trunks/drawing.png'
+import trunksS from '../assets/trunks/trunks.jpg'
 import bulma from '../assets/Profile/Bulma&V.jpeg'
-import Goten from '../assets/Profile/goten.jpeg'
-import Pan from '../assets/Profile/pan.jpeg'
 import Bra from '../assets/Profile/bra.png'
-import Cyborg from '../assets/Profile/c-18.jpeg'
+import battleBU from '../assets/goku/gokuVsBu.jpeg'
+import gokuVsBu from '../assets/goku/GokuvsBu2.jpeg'
+import gokuBU from '../assets/goku/gokuvsBu3.jpeg'
+import babyBra from '../assets/bra/babybra.jpeg'
 
 const arrayOfObjects = [
   {
@@ -19,7 +21,7 @@ const arrayOfObjects = [
     number: 150,
     comment_number: 9,
     pubblicetion: `${2} ${' '} ${'ore fa'}`,
-    images: [Goan, Goten, Pan, Cyborg],
+    images: [babyBra],
   },
   {
     image: goku,
@@ -27,7 +29,7 @@ const arrayOfObjects = [
     number: 580,
     comment_number: 13,
     pubblicetion: `${5} ${' '} ${'ore fa'}`,
-    images: [],
+    images: [battleBU, gokuVsBu, gokuBU],
   },
   {
     image: bulma,
@@ -35,7 +37,7 @@ const arrayOfObjects = [
     number: 789,
     comment_number: 65,
     pubblicetion: `${1} ${' '} ${'Giorno fa'}`,
-    images: [],
+    images: [bulma],
   },
   {
     image: trunks,
@@ -43,14 +45,14 @@ const arrayOfObjects = [
     number: 200,
     comment_number: 7,
     pubblicetion: `${3} ${' '} ${'ore fa'}`,
-    images: [],
+    images: [pencilTrunks, trunksS],
   },
 ]
 
 export default function LeftSidebar() {
   return (
     <div>
-      <Stories></Stories>
+      <Stories />
       {arrayOfObjects.map((element, index) => (
         <Card
           key={index}
@@ -59,7 +61,7 @@ export default function LeftSidebar() {
           number={element.number}
           comment_number={element.comment_number}
           pubblicetion={element.pubblicetion}
-          background={element.images[0]}
+          background={element.images}
           className="menuItem"
         ></Card>
       ))}

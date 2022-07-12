@@ -1,0 +1,19 @@
+.carousel.carousel-slider {
+  display: block;
+}
+.carousel {
+  display: none;
+}
+.carousel.carousel-slider .control-arrow {
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #b0b0b047;
+  display: flex;
+  align-items: center;
+}
+.carousel .slide img {
+  height: 500px;
+}

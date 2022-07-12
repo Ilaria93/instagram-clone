@@ -1,0 +1,71 @@
+.profileInfo {
+  padding: 0 150px;
+}
+.profileInfo__top {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0;
+}
+.profileInfo__image {
+  width: 40%;
+}
+.profileInfo__image img {
+  display: block;
+  width: 200px;
+  border-radius: 50%;
+  margin: auto;
+}
+.profileInfo__info {
+  width: 60%;
+}
+.profileInfo__info-name,
+.profileInfo__info-numbers {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+.profileInfo__info-name p {
+  font-size: 25px;
+}
+.profileInfo__info-name .profileInfo__changes {
+  border: 1px solid #e7e7e7;
+  padding: 6px 10px;
+  border-radius: 7px;
+  text-transform: initial;
+  margin: 0 20px;
+}
+.profileInfo__info-name .profileInfo__settings {
+  width: 20px;
+  height: 20px;
+}
+.profileInfo__info-numbers {
+  padding: 20px 0;
+}
+.profileInfo__info-numbers p {
+  margin-right: 20px;
+}
+.profileInfo__info-numbers span {
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.profileInfo__info-bio p {
+  margin: 10px 0;
+}
+.profileInfo__info-bio p:first-of-type {
+  font-weight: bold;
+}
+.profileInfo__info-stories {
+  display: inline-flex;
+  overflow: scroll;
+  height: 145px;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.profileInfo__info-stories small {
+  font-weight: bold;
+  position: absolute;
+  bottom: -17px;
+}

@@ -16,7 +16,7 @@ import {
 //components
 import ProfileMenu from './ProfileMenu'
 import SelectedMenu from './SelectedMenu'
-import Modal from './Modal'
+import Modal from './modal/Modal'
 
 import profileImg from '../assets/Profile/profile.jpg'
 

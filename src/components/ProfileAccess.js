@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import Modal from './Modal'
+import Modal from './modal/Modal'
 
 const useStyles = makeStyles((theme) => ({
   root: {
