@@ -38,7 +38,6 @@ function Direct(props) {
   const inputRef = useRef(null)
 
   const [components, setComponents] = useState([''])
-  const [answers, setAnswers] = useState('')
   const [isTyping, setIsTyping] = useState(false)
 
   //use to cange icon on typing

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 //MATIRIAL-UI
 import { makeStyles } from '@material-ui/core/styles'
 import { Avatar, Button, TextField } from '@material-ui/core'
@@ -42,6 +42,15 @@ export default function Card(props) {
     pubblicetion,
     background,
   } = props
+  const [components, setComponents] = useState([''])
+
+  const inputRef = useRef(null)
+
+  const postComment = () => {
+    console.log(inputRef.current.value)
+
+    setComponents([...components, inputRef.current.value])
+  }
 
   return (
     <div className="card">
@@ -86,19 +95,31 @@ export default function Card(props) {
         <p>Piace a {number}</p>
         <p> {name}</p>
         <p>Mostra tutti i {comment_number} commenti</p>
+
+        {components.map((item, i) => (
+          <p className="card__text-comment" key={i}>
+            Vegeta
+            <span> {item}</span>
+          </p>
+        ))}
+
         <p>{pubblicetion}</p>
       </div>
       <div className="card__comment">
         <FontAwesomeIcon className="card__icon" icon={faFaceSmile} />
         <form className={classes.root} noValidate autoComplete="off">
-          <TextField
-            id="outlined-basic"
-            label="Aggiungi commento..."
+          <input
+            className="card__input"
+            placeholder="Aggiungi commento..."
             variant="outlined"
+            ref={inputRef}
+            type="text"
           />
         </form>
         <div className={classes.root.btn}>
-          <Button className="btn__public">Pubblica</Button>
+          <Button onClick={postComment} className="btn__public">
+            Pubblica
+          </Button>
         </div>
       </div>
     </div>
