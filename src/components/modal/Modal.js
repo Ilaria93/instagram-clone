@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Modal from '@material-ui/core/Modal'
 
 //COMPONENTS
-import UploadImageButton from '../UploadImageButton'
+import UploadImageButton from '../buttons/UploadImageButton'
 
 import images from '../../assets/images_upload.png'
 

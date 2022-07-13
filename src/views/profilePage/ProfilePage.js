@@ -122,7 +122,7 @@ function ProfilePage() {
     <div className="profilePage">
       <Header />
       <hr />
-      <div>
+      <div style={{ overflow: 'scroll', height: 'calc(100vh - 60px)' }}>
         <ProfileInfo array={ImagesProfile} postNumber={ImagesProfile.length} />
         <ImagesPage
           array={ImagesProfile}

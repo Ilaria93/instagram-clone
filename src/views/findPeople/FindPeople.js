@@ -75,11 +75,13 @@ function FindPeople() {
     <div className="findPeople">
       <Header />
       <hr />
-      <ImagesPage
-        array={peoples}
-        icon1={faHeart}
-        icon2={faComment}
-      ></ImagesPage>
+      <div style={{ overflow: 'scroll', height: 'calc(100vh - 60px)' }}>
+        <ImagesPage
+          array={peoples}
+          icon1={faHeart}
+          icon2={faComment}
+        ></ImagesPage>
+      </div>
     </div>
   )
 }

@@ -1,7 +1,10 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import './styles/uploadFile.css'
+import React from 'react'
+
+//STYLES
+import { makeStyles } from '@material-ui/core/styles'
+
+//COMPONENTS
+import BlueButton from './BlueButton'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,10 +15,10 @@ const useStyles = makeStyles((theme) => ({
   input: {
     display: 'none',
   },
-}));
+}))
 
 export default function UploadButtons() {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <div className={classes.root}>
@@ -27,11 +30,14 @@ export default function UploadButtons() {
         type="file"
       />
       <label htmlFor="contained-button-file">
-        <Button variant="contained" color="primary" component="span" className="upload__button">
-          Seleziona dal computer
-        </Button>
+        <BlueButton label={'Seleziona dal computer'}></BlueButton>
       </label>
-      <input accept="image/*" className={classes.input} id="icon-button-file" type="file" />
+      <input
+        accept="image/*"
+        className={classes.input}
+        id="icon-button-file"
+        type="file"
+      />
     </div>
-  );
+  )
 }

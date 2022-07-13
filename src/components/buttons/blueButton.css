@@ -1,0 +1,8 @@
+.blueButton {
+  background-color: #0095f6 !important;
+  box-shadow: unset !important;
+  border-radius: 4px !important;
+  color: #fff !important;
+  padding: 7px !important;
+  text-transform: initial !important;
+}

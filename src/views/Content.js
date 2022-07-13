@@ -24,7 +24,7 @@ export default function Content() {
   const name = 'Vegeta'
 
   return (
-    <div>
+    <div style={{ overflow: 'scroll', height: 'calc(100vh - 60px)' }}>
       <div style={content}>
         <div style={content_left}>
           <LeftSidebar />
