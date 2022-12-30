@@ -76,3 +76,37 @@ export const retrieveProfiles = () => {
   console.log('profiles', profiles)
   return { data: profiles }
 }
+
+export const retrieveStories = () => {
+  let stories = []
+
+  for (let id = 1; id <= 20; id++) {
+    let firstName = faker.name.firstName()
+    let avatar = faker.image.avatar()
+    let images = faker.image.nature()
+
+    stories.push({
+      id: id,
+      name: firstName,
+      image: avatar,
+      images: images,
+    })
+  }
+  return { data: stories }
+}
+
+export const suggestProfiles = () => {
+  let suggestProfiles = []
+
+  for (let id = 1; id <= 5; id++) {
+    let firstName = faker.name.firstName()
+    let avatar = faker.image.avatar()
+
+    suggestProfiles.push({
+      id: id,
+      name: firstName,
+      image: avatar,
+    })
+  }
+  return { data: suggestProfiles }
+}

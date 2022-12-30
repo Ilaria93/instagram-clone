@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Avatar } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Modal from './modal/Modal'
+import { suggestProfiles } from '../hooks/main'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -95,38 +96,7 @@ const links = {
   marginRight: 10,
   textDecoration: 'none',
 }
-const arrayOfTips = [
-  {
-    id: 0,
-    avatar: require('../assets/Profile/Napa.png'),
-    tip_name: 'Napa',
-    second_name: 'Suggerimenti per te',
-  },
-  {
-    id: 1,
-    avatar: require('../assets/Profile/genio.png'),
-    tip_name: '_Genio_delle_tartarughe_',
-    second_name: 'Seguito da Son Goku + altri 5',
-  },
-  {
-    id: 2,
-    avatar: require('../assets/Profile/Crili.png'),
-    tip_name: '_Crilin_',
-    second_name: 'Seguito da Son Goku + altri 5',
-  },
-  {
-    id: 3,
-    avatar: require('../assets/Profile/Junior.png'),
-    tip_name: 'Junior',
-    second_name: 'da poco su dragongram',
-  },
-  {
-    id: 4,
-    avatar: require('../assets/Profile/tensing.png'),
-    tip_name: 'Tensing ',
-    second_name: 'da poco su dragongram',
-  },
-]
+
 const arrayOfLinks = [
   {
     name: 'Informazioni',
@@ -170,9 +140,17 @@ export default function ProfileAccess(props) {
   const { myName } = props
 
   const [showResults, setShowResults] = React.useState(false)
+
   const onClick = () => {
     setShowResults(!showResults)
   }
+
+  const [suggest, setSuggest] = useState([])
+
+  useEffect(() => {
+    const { data } = suggestProfiles()
+    setSuggest(data)
+  }, [])
 
   const classes = useStyles()
   return (
@@ -198,13 +176,13 @@ export default function ProfileAccess(props) {
         <h4 style={tips_color}>Suggerimenti per te</h4>
         <p>Mostra tutti</p>
       </div>
-      {arrayOfTips.map((el) => (
+      {suggest.map((el) => (
         <div key={el.id} style={(profileAccess, profileAccess_tips)}>
           <div style={profileAccess_leftNoWidth}>
-            <Avatar alt="profile" src={el.avatar} className={classes}></Avatar>
+            <Avatar alt="profile" src={el.image} className={classes}></Avatar>
             <div style={profileAccess_text}>
-              <p style={profileAccess_p}>{el.tip_name}</p>
-              <p style={profileAccess_tipText}>{el.second_name}</p>
+              <p style={profileAccess_p}>{el.name}</p>
+              <p style={profileAccess_tipText}>{'Suggerimenti per te'}</p>
             </div>
           </div>
           <div style={profileAccess_rightNoWidth}>
