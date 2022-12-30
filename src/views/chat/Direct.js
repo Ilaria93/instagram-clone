@@ -112,7 +112,7 @@ function Direct(props) {
         </div>
       ) : (
         <div className="direct">
-          <img src={icon} className="image" />
+          <img alt="" src={icon} className="image" />
           <h4 className="mt">I tuoi messaggi</h4>
           <p className="text">
             Invia foto e messaggi privati a un amico o gruppo.

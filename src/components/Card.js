@@ -1,7 +1,9 @@
 import React, { useState, useRef } from 'react'
+
 //MATIRIAL-UI
 import { makeStyles } from '@material-ui/core/styles'
-import { Avatar, Button, TextField } from '@material-ui/core'
+import { Avatar, Button } from '@material-ui/core'
+
 //FONTAWESOME
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons'
@@ -36,12 +38,14 @@ export default function Card(props) {
   const classes = useStyles()
   const {
     image,
+    city,
     name,
     number,
     comment_number,
-    pubblicetion,
+    pubblication,
     background,
   } = props
+
   const [components, setComponents] = useState([''])
 
   const inputRef = useRef(null)
@@ -62,19 +66,19 @@ export default function Card(props) {
           <div className="card__leftText">
             <p>{name}</p>
             <p>
-              <small> Città </small>
+              <small> {city} </small>
             </p>
           </div>
         </div>
         <FontAwesomeIcon className="menu__icon" icon={faEllipsis} />
       </div>
-      {background.length > 1 ? (
+      {typeof background !== 'string' || !background instanceof String ? (
         <Carousel Images={background} />
       ) : (
         <div
           className="card__pictures"
           style={{
-            backgroundImage: `url(${background[0]})`,
+            backgroundImage: `url(${background})`,
             backgroundPosition: 'top',
             backgroundSize: 'cover',
           }}
@@ -103,7 +107,7 @@ export default function Card(props) {
           </p>
         ))}
 
-        <p>{pubblicetion}</p>
+        <p>{pubblication}</p>
       </div>
       <div className="card__comment">
         <FontAwesomeIcon className="card__icon" icon={faFaceSmile} />

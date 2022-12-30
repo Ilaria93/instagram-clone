@@ -65,7 +65,7 @@ export default function SimpleModal(props) {
       </div>
       <hr className="modal__hr" />
       <div className="modal__center">
-        <img src={images} />
+        <img alt="" src={images} />
         <p>{text}</p>
         <UploadImageButton />
       </div>

@@ -1,26 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '@material-ui/core'
+
 //FONTAWESOME
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGear } from '@fortawesome/free-solid-svg-icons'
 
 //SYLES
 import './styles/profileInfo.css'
-import profileImg from '../assets/Profile/profile.jpg'
+
 //COMPONETS
+import { retrieveUser } from '../hooks/main'
 
 function ProfileInfo(props) {
   const { postNumber, array } = props
+
+  const [user, setUser] = useState({})
+
+  useEffect(() => {
+    const { data } = retrieveUser()
+    setUser(data)
+  }, [])
 
   return (
     <div className="profileInfo">
       <div className="profileInfo__top">
         <div className="profileInfo__image">
-          <img src={profileImg} />
+          <img alt="" src={user.image} />
         </div>
         <div className="profileInfo__info">
           <div className="profileInfo__info-name">
-            <p>{'Vegeta'}</p>
+            <p>{user.name}</p>
             <Button className="profileInfo__changes">Modifica profilo</Button>
             <FontAwesomeIcon
               icon={faGear}
@@ -44,9 +53,7 @@ function ProfileInfo(props) {
             </p>
           </div>
           <div className="profileInfo__info-bio">
-            <p>Il principe dei Sayan</p>
-            <p>Il Saiyan più forte</p>
-            <p>L'unico e vero Super Saiyan</p>
+            <p>{user.bio}</p>
           </div>
         </div>
       </div>

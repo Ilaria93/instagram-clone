@@ -5,7 +5,7 @@ import Header from '../../components/Header'
 import ImagesPage from '../../components/ImagesPage'
 
 //FontAwesome icon
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faComment } from '@fortawesome/free-solid-svg-icons'
 
 function FindPeople() {
